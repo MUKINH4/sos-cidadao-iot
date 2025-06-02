@@ -48,9 +48,13 @@ Sistema IoT desenvolvido com ESP32 para auxiliar moradores de áreas de risco em
 
 ---
 
-## 🖥️ Exemplo do Dashboard
+## Diagrama do Dispositivo no Wokwi
 
-![Dashboard](./docs/dashboard.jpg)
+![ESP32](./assets/esp32.jpg)
+
+## Fluxo do node red
+
+![NODE RED](./assets/node-red-flow.jpg)
 
 ---
 
