@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "author": "Muka",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp32", "top": 52.7, "left": 100.6, "attrs": {} },
+    { "type": "wokwi-button", "id": "botao", "top": 50, "left": 400, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "led",
+      "top": 47,
+      "left": -9.3,
+      "rotate": 270,
+      "attrs": { "common": "anode" }
+    },
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": 242.4, "left": 40.2, "attrs": {} },
+    { "type": "wokwi-mq2-gas-sensor", "id": "mq2", "top": 300, "left": 400, "attrs": {} },
+    { "type": "wokwi-rain-sensor", "id": "chuva", "top": 350, "left": 150, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrassom",
+      "top": -65.7,
+      "left": 120.7,
+      "attrs": { "distance": "2" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 61.55,
+      "left": 28.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 71.15,
+      "left": 28.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 119.15,
+      "left": 19.2,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": 117.9, "left": 256.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 267.5, "left": 182.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 159.8,
+      "left": -48,
+      "attrs": { "color": "grey", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp32:GND.2", "buzzer:1", "black", [ "h-76.8", "v134.3", "h38.4" ] ],
+    [ "esp32:D26", "buzzer:2", "red", [ "h9.6", "v182.3", "h-38.4" ] ],
+    [ "esp32:D27", "r3:2", "red", [ "h0" ] ],
+    [ "r3:1", "led:R", "red", [ "v0" ] ],
+    [ "esp32:D25", "r2:2", "green", [ "h0" ] ],
+    [ "r2:1", "led:G", "green", [ "v0" ] ],
+    [ "r1:1", "led:B", "blue", [ "v0" ] ],
+    [ "esp32:D33", "r1:2", "blue", [ "h19.2", "v-67.2" ] ],
+    [ "esp32:D13", "ultrassom:TRIG", "green", [ "h86.4", "v-153.8", "h9.6" ] ],
+    [ "esp32:D12", "ultrassom:ECHO", "green", [ "h0" ] ],
+    [ "esp32:GND.1", "ultrassom:GND", "black", [ "h18.9", "v-0.1" ] ],
+    [ "esp32:3V3", "led:COM", "green", [ "v9.6", "h-163.5", "v-134.3" ] ],
+    [ "esp32:3V3", "ultrassom:VCC", "green", [ "v0", "h-19.5", "v-182.4" ] ],
+    [ "esp32:GND.1", "pot1:GND", "black", [ "h-29.1", "v163.1", "h38.4" ] ],
+    [ "esp32:3V3", "pot1:VCC", "green", [ "v0", "h57.3", "v144", "h-28.8" ] ],
+    [ "esp32:D34", "pot1:SIG", "green", [ "h67.2", "v287.8", "h48" ] ],
+    [ "esp32:3V3", "gas1:VCC", "green", [ "v-19.2", "h191.7" ] ],
+    [ "esp32:GND.1", "gas1:GND", "black", [ "h210.9", "v-48.1", "h-19.2" ] ],
+    [ "esp32:D35", "gas1:AOUT", "green", [ "h0" ] ],
+    [ "esp32:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp32:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp32:D14", "btn1:1.r", "green", [ "h0" ] ],
+    [ "esp32:GND.2", "btn1:2.r", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
