@@ -30,7 +30,7 @@ Sistema IoT desenvolvido com ESP32 para auxiliar moradores de áreas de risco em
 
 ### No Node-RED
 - `node-red-dashboard`: cria interface visual (gauges, textos).
-- `mqtt in`, `json`, `function`, `ui_gauge`, `ui_text`: fluxos principais do painel.
+- `mqtt in`, `json`, `ui_gauge`, `ui_text`: fluxos principais do painel.
 
 ---
 
